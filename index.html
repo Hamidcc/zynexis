@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Zynexis | Premium Moderation Bot</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#C77DFF">
+
+<link rel="icon" href="icon1.png">
+<link rel="stylesheet" href="beer.css">
+<script src="script.js"></script>
+
+<style>
+body{
+opacity:0;
+animation:fadeIn 1s ease forwards;
+background:linear-gradient(135deg,#ff9ad5,#c77dff,#8a5cff);
+background-attachment:fixed;
+}
+
+@keyframes fadeIn{to{opacity:1}}
+
+.pop{
+position:fixed;
+font-weight:900;
+pointer-events:none;
+animation:pop 900ms cubic-bezier(.2,.9,.3,1) forwards;
+color:white;
+text-shadow:0 0 12px rgba(0,0,0,.25);
+}
+
+@keyframes pop{
+0%{transform:scale(.3) translateY(0);opacity:1}
+70%{transform:scale(1.6) translateY(-60px)}
+100%{transform:scale(1) translateY(-90px);opacity:0}
+}
+</style>
+
+<script>
+const commands=["/timeout","/ban","/lock","/afk","/mute","/kick","/warn","/slowmode","/unlock","/unban"];
+
+document.addEventListener("click",e=>{
+const cmd=commands[Math.floor(Math.random()*commands.length)];
+const el=document.createElement("div");
+el.className="pop";
+el.textContent=cmd;
+el.style.left=e.clientX+"px";
+el.style.top=e.clientY+"px";
+document.body.appendChild(el);
+setTimeout(()=>el.remove(),900);
+});
+</script>
+</head>
+
+<body class="middle-align center-align">
+
+<section class="center-align margin">
+<div class="center center-align middle-align flex-wrap">
+<a href="https://top.gg/bot/1433616050188062821">
+<img id="avatar" class="counting-icon" src="icon1.png">
+<h2 style="
+font-weight:900;
+background:linear-gradient(90deg,#ff9ad5,#ff9ad5);
+-webkit-background-clip:text;
+background-clip:text;
+-webkit-text-fill-color:transparent;
+color:transparent;
+display:inline-block;
+">Zynexis</h2>
+</a>
+</div>
+
+<h5 class="center-align white-text small">Compete globally using powerful moderation utilities.</h5>
+<p class="center-align white-text small">Execute fast. Control servers. Lead communities.</p>
+
+<div class="large-margin">
+
+        <a href="https://discord.com/oauth2/authorize/?client_id=1433616050188062821&scope=bot">
+          <button class="purple10 white-text tiny-margin wave">
+            <i>add</i>
+            <span>Add bot</span>
+          </button>
+        </a>
+        <a href="https://discord.gg/whXXRycuTw">
+          <button class="purple10 white-text tiny-margin wave">
+            <i>forum</i>
+            <span>Support server</span>
+          </button>
+        </a>
+      <a href="/leaderboard"><button class="purple10 white-text tiny-margin"><i>leaderboard</i><span>Leaderboard</span></button></a>
+      <a href="/info"><button class="purple10 white-text tiny-margin"><i>insert_chart</i><span>Statistics</span></button></a>
+      <a href="/forums"><button class="purple10 white-text tiny-margin"><i>post</i><span>Forums</span></button></a>
+      <a href="/dashboard">
+          <button class="purple10 white-text tiny-margin wide">
+            <i>shield_person</i>
+            <span>Dashboard</span>
+          </button>
+      </a>
+
+</div>
+</section>
+
+<script>
+document.getElementById("avatar").src="icon1.png?v="+Date.now();
+</script>
+
+</body>
+</html>
